@@ -35,7 +35,7 @@ angular.module('starter')
 
 angular.module('starter')
 .controller('FinalizarPedidoController', function($stateParams, $scope
-	, $ionicPopup, $state, CarroService){
+	, $ionicPopup, $state, CarroService, $ionicHistory){
 
 	$scope.carroFinalizado = angular.fromJson($stateParams.carro);
 
@@ -55,11 +55,15 @@ angular.module('starter')
 
 		CarroService.salvarPedido(pedidoFinalizado).then(function(dados){
 
+			$ionicHistory.nextViewOptions({
+				disableBack: true,
+			})
+
 			$ionicPopup.alert({
 				title: 'Parabens',
 				template: 'Você acaba de comprar um carro.'
 			}).then(function(){
-				$state.go('listagem');
+				$state.go('app.listagem');
 			});
 
 		}, function(erro){
