@@ -11,7 +11,7 @@ angular.module('starter')
 			});
 		}, 
 		salvarPedido : function(pedido){
-			return $http.get(url + "salvarpedido" , pedido).then(function(response){
+			return $http.get(url + "salvarpedidoss" , pedido).then(function(response){
 				return "Deu certo.";
 			});
 		},
