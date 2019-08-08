@@ -50,6 +50,11 @@ angular.module('starter')
 			});
 
 		}, function(erro){
+
+			$ionicHistory.nextViewOptions({
+				disableBack: true,
+			})
+			
 			$ionicPopup.alert({
 				title: 'Ops!',
 				template : 'Servidor com problemas, tente mais tarde!'

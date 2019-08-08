@@ -12,6 +12,15 @@ $stateProvider
 	controller: 'MenuController'
 })
 
+
+.state('login', {
+	url : '/login',
+	templateUrl : 'templates/login.html',
+	controller : 'LoginController'
+})
+
+
+
 .state('app.perfil', {
 	url : '/perfil',
 	views : {
@@ -54,10 +63,17 @@ $stateProvider
 	
 })
 
-.state('login', {
-	url : '/login',
-	templateUrl : 'templates/login.html',
-	controller : 'LoginController'
+
+.state('app.agendamentos',{
+	url : '/agendamentos',
+	views : {
+		'menuContent' : {
+			templateUrl : 'templates/agendamentos.html',
+			controller : 'AgendamentoController'
+			
+		}
+	}
+	
 })
 
 })
